@@ -119,15 +119,22 @@ details p{margin:0 0 12px;color:var(--mut)}
 .chk{font-weight:400;margin-bottom:8px;display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surf2);cursor:pointer}
 .chk input{width:auto;min-height:0;margin:0;accent-color:var(--blu)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== Módulo estructural: solo reutiliza variables y estilos existentes ===== */
+.v3{position:relative;border:1px solid var(--line);border-radius:12px;background:#0F1B2E;overflow:hidden;height:clamp(320px,56vw,520px)}
+.v3 canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.v3 canvas:active{cursor:grabbing}
+.fm{font-family:inherit;font-variant-numeric:tabular-nums;font-size:.84rem;background:#0F1B2E;border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:8px 12px;margin:0 0 8px;color:var(--ink);overflow-x:auto;white-space:pre}
+.lg{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:12px;font-size:.8rem;color:var(--mut)}
+.lg i{display:inline-block;width:26px;height:8px;border-radius:99px;vertical-align:middle;margin-right:6px}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol><symbol id="i-pct" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/></symbol><symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 010 3h-3a1.5 1.5 0 000 3h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M22 17l-9-9-4 4-7-7M16 17h6v-6"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10zM2 21c0-3 1.9-5.2 5-7"/></symbol><symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-6M12 16c-4 0-6-2.5-6-5 0-2 1-3 2-3.5C8 5 10 3 12 3s4 2 4 4.5c1 .5 2 1.5 2 3.5 0 2.5-2 5-6 5z"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2zM3 7l2-3h12M17 13h2"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></symbol><symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 10h18M9 4v12M15 4v12M12 16v4M8 20h8"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol></svg>
 <header class="hero"><div class="wrap">
 <h1><span class="sun"></span>SIMULADOR FOTOVOLTAICO – <span>PVWatts</span></h1>
-<p>Estima cuánta energía solar podría producir tu vivienda y cuánto bajaría tu consumo y tu factura de electricidad. Proyecto académico de Fisica Mecanica sobre eficiencia energética y energías renovables.</p>
+<p>Estima cuánta energía solar podría producir tu vivienda y cuánto bajaría tu consumo y tu factura de electricidad. Proyecto académico de Ingeniería de Sistemas sobre eficiencia energética y energías renovables.</p>
 </div></header>
-<nav class='tabs'><div class='wrap'><button class='tabbtn on' data-t='sim'>Simulador</button><button class='tabbtn' data-t='pan'>Tipos de paneles</button><button class='tabbtn' data-t='guia'>Guía de instalación</button><button class='tabbtn' data-t='faq'>Preguntas frecuentes</button></div></nav>
+<nav class='tabs'><div class='wrap'><button class='tabbtn on' data-t='sim'>Simulador</button><button class='tabbtn' data-t='pan'>Tipos de paneles</button><button class='tabbtn' data-t='guia'>Guía de instalación</button><button class='tabbtn' data-t='est'>Estructura</button><button class='tabbtn' data-t='faq'>Preguntas frecuentes</button></div></nav>
 
 <main class='wrap'>
 <div class='tab on' id='tab-sim'>
@@ -233,9 +240,30 @@ details p{margin:0 0 12px;color:var(--mut)}
 <details><summary>¿Qué pasa si hay un apagón?</summary><p>Los sistemas conectados a la red se desconectan por seguridad durante un apagón. Para tener energía en ese caso se necesitan baterías.</p></details>
 </section>
 </div>
+<div class='tab' id='tab-est'>
+<section class='card'><h2>Datos de la estructura de soporte</h2><p class='sub'>Los paneles se toman del simulador (potencia y tipo). Es una simulación preliminar y se recalcula al cambiar cualquier dato.</p>
+<div class='grid g2'><h3 class='gh'>Instalación</h3>
+<div><label for='e_b'>Inclinación de los paneles (°)</label><input id='e_b' type='number' inputmode='decimal' min='0' max='45' step='1' value='10'><div class='hint'>Entre 0° y 45°.</div></div>
+<div><label for='e_nh'>Paneles por hilera</label><input id='e_nh' type='number' inputmode='numeric' min='1' max='12' step='1' value='4'><div class='hint' id='e_nhh'></div></div>
+<div><label for='e_v'>Ráfaga de diseño (m/s)</label><input id='e_v' type='number' inputmode='decimal' min='5' max='60' step='1' value='25'><div class='hint'>Verifica el valor en NSR-10, Título B.</div></div>
+<h3 class='gh'>Sujeción</h3>
+<div><label for='e_sub'>Superficie de apoyo</label><select id='e_sub'><option value='c'>Losa de concreto (anclaje)</option><option value='m'>Correa metálica (perno pasante)</option></select></div>
+<div><label for='e_mat'>Material del perno</label><select id='e_mat'><option value='8.8'>Acero 8.8 galvanizado</option><option value='A2-70'>Inoxidable A2-70</option></select></div>
+<div><label for='e_d'>Diámetro del perno</label><select id='e_d'><option value='auto'>Automático (recomendado)</option><option value='8'>M8</option><option value='10'>M10</option><option value='12'>M12</option><option value='16'>M16</option></select></div>
+<div><label for='e_c'>Caso de carga mostrado</label><select id='e_c'><option value='1'>Viento de succión (levantamiento)</option><option value='0'>Peso + viento a presión</option></select></div>
+</div><div id='estm'></div></section>
+<section class='card'><h2>Modelo 3D de la estructura</h2><p class='sub'>Arrastra para rotar · rueda del ratón o pellizco para acercar y alejar. Pernos y tuercas a escala ×2 para que se vean.</p>
+<div class='v3'><canvas id='c3d' role='img' aria-label='Modelo 3D de paneles, estructura, pernos y tuercas'></canvas></div>
+<div class='lg'><span><i style='background:linear-gradient(90deg,#10B981,#F59E0B,#F87171)'></i>Carga relativa del apoyo (menor → mayor)</span><span>Flechas: peso, viento y reacciones (T = tracción, V = cortante)</span><button class='btn alt' id='v3r' style='padding:8px 16px'>Restablecer vista</button></div></section>
+<section class='card'><h2>Panel de resultados técnicos</h2><p class='sub' id='estsub'></p><div class='kpis' id='estk'></div></section>
+<section class='card'><h2>Fuerzas en cada punto de fijación</h2><p class='sub'>Caso mostrado en el modelo 3D. Cada pata lleva 2 pernos; la carga no se reparte por igual.</p><div class='scroll'><table><thead><tr><th>Apoyo</th><th>Posición x (m)</th><th>Reacción (kN)</th><th>Tracción por perno (kN)</th><th>Cortante por perno (kN)</th><th>Utilización</th></tr></thead><tbody id='estf'></tbody></table></div></section>
+<section class='card'><h2>Verificación del perno y la unión</h2><p class='sub'>Valores teóricos de diseño con la envolvente de ambos casos de carga.</p><div class='scroll'><table><thead><tr><th>Modo de falla</th><th>Demanda</th><th>Capacidad teórica</th><th>Factor de seguridad</th></tr></thead><tbody id='estc'></tbody></table></div></section>
+<section class='card'><h2>Estática, distribución y justificación</h2><div id='este'></div></section>
+<div class='note'><b>Aviso:</b> simulación preliminar con fines educativos, no es certificación estructural. Las capacidades son valores teóricos calculados con fórmulas de ISO 898-1 y EN 1993-1-8 y con supuestos propios (aluminio 6005-T5 de 5 mm en la pata, concreto de 21 MPa sin fisurar, correa de 3 mm). No son valores verificados con la ficha del fabricante. El diseño real exige un ingeniero estructural, norma local de viento y sismo, y ensayo o ficha de los anclajes.</div>
+</div>
 </main>
 <dialog id='dlg'><div id='dlgc'></div></dialog>
-<footer>Simulador Fotovoltaico – PVWatts · Proyecto de Física Mecánica · Eficiencia energética y energías renovables</footer>
+<footer>Simulador Fotovoltaico – PVWatts · Proyecto de Ingeniería de Sistemas · Eficiencia energética y energías renovables</footer>
 
 <script>
 const CIUDADES={"Barranquilla":5.5,"Santa Marta":5.6,"Cartagena":5.4,"Riohacha":6.0,"Valledupar":5.3,"Montería":5.0,"Sincelejo":5.2,"Cúcuta":5.0,"Bucaramanga":4.6,"Medellín":4.6,"Cali":4.7,"Bogotá":4.2,"Tunja":4.4,"Manizales":4.2,"Pereira":4.4,"Neiva":5.0,"Villavicencio":4.5,"Pasto":4.2,"Quibdó":3.9,"Leticia":4.3};
@@ -342,6 +370,197 @@ $('ck').onchange=()=>{const n=$('ck').querySelectorAll('input:checked').length;$
 $('tipo').onchange=()=>{$('perd').value=PAN[$('tipo').value].p;run()};
 $('cp').onclick=copiar;
 document.addEventListener('click',e=>{const t=e.target.closest('[data-t]'),g=e.target.closest('[data-go]'),c=e.target.closest('.pcard'),u=e.target.closest('[data-use]');if(t)tab(t.dataset.t);if(g)tab(g.dataset.go);if(c)openP(c.dataset.k);if(u){$('tipo').value=u.dataset.use;$('perd').value=PAN[u.dataset.use].p;$('dlg').close();tab('sim');run()}if(e.target.closest('[data-x]'))$('dlg').close()});
+/* ================= MÓDULO DE INGENIERÍA ESTRUCTURAL (simulación preliminar) =================
+   Unidades SI: N, kN, m, mm (secciones), MPa, N·m, kg. Ejes globales: x horizontal, y vertical.
+   Plano de la pendiente: s (a lo largo del panel) y n (normal hacia afuera). */
+const GM=1.25,RHO=1.225,GR=9.81,clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const ESP={mono:{wp:550,mm:12.2},poli:{wp:330,mm:11.5},fina:{wp:150,mm:9},bi:{wp:560,mm:14}}; // potencia (W) y masa/área (kg/m²)
+const BOLT={8:{As:36.6,m:6.8,s:13},10:{As:58,m:8.4,s:16},12:{As:84.3,m:10.8,s:18},16:{As:157,m:14.8,s:24}}; // área resistente (mm²), altura y llave de tuerca (mm)
+const MAT={"8.8":{n:"Acero 8.8 galvanizado",fu:800,fy:640,K:.2,tu:"clase 8"},"A2-70":{n:"Inoxidable A2-70",fu:700,fy:450,K:.3,tu:"A2-70"}};
+const LENS=[20,25,30,35,40,45,50,60,70,80,90,100,110,120,130,140,150,160,180,200];
+const num=(id,a,b,d)=>{const x=parseFloat($(id).value);return isNaN(x)?d:clamp(x,a,b)};
+let ST=null;const C3={yaw:-.7,pit:.42,zoom:1};
+
+/* 1) Geometría, masas y cargas de viento de una hilera */
+function geom(v){
+  const k=$("tipo").value,t=ESP[k],a=t.wp/(PAN[k].ef*1000),w=1.13,l=a/w,mp=a*t.mm;
+  const N=Math.max(1,Math.ceil(v.kw*1000/t.wp)),nh=Math.min(N,Math.round(num("e_nh",1,12,4))),Hn=Math.ceil(N/nh);
+  const L=nh*(w+.02),m=Math.max(1,Math.ceil((L-.3)/1.6)),bd=num("e_b",0,45,10),beta=bd*Math.PI/180,vv=num("e_v",5,60,25);
+  const Wst=(2*L*2.2+2*(m+1)*1.2)*GR,Wpan=nh*mp*GR,q=.5*RHO*vv*vv; // riel Al 2,2 kg/m · pata 1,2 kg
+  return{k,N,nh,Hn,w,l,mp,L,m,beta,bd,vv,Wpan,Wst,G:Wpan+Wst,A:nh*w*l,q,pp:q*(.8+.02*bd),ps:q*(1+.03*bd),
+    a1:.25*l,a2:.75*l,h0:.15,sp:(L-.3)/m,sw:.35*l,t:t};
+}
+/* Coeficientes de reacción de una viga continua (ΣR = nº de vanos) */
+const coefs=m=>{if(m===1)return[.5,.5];if(m===2)return[.375,1.25,.375];const c=Array(m+1).fill(1);c[0]=c[m]=.4;c[1]=c[m-1]=1.1;return c};
+
+/* 2) Estática: c=0 peso+viento a presión · c=1 succión (levantamiento) */
+function solve(c,g){
+  const sb=Math.sin(g.beta),cb=Math.cos(g.beta),pr=c===0,Gd=(pr?1.35:.9)*g.G,Wd=1.5*(pr?g.pp:g.ps)*g.A;
+  const Fw=pr?-Wd:Wd,Ld=[[g.l/2,-Gd*cb],[g.sw,Fw]],Fs=-Gd*sb,a1=g.a1,a2=g.a2;
+  const N2=-Ld.reduce((s,q)=>s+q[1]*(q[0]-a1),0)/(a2-a1),N1=-(Ld[0][1]+Ld[1][1])-N2,H=-Fs/2;   // ΣM(riel 1)=0, ΣFn=0, ΣFs=0
+  const R=[N1,N2].map(N=>[-N*sb+H*cb,N*cb+H*sb]);                                              // reacciones en ejes globales
+  const P=s=>[s*cb,s*sb],all=[[P(g.l/2),[0,-Gd]],[P(g.sw),[-Fw*sb,Fw*cb]],[P(a1),R[0]],[P(a2),R[1]]];
+  const SFx=all.reduce((s,q)=>s+q[1][0],0),SFy=all.reduce((s,q)=>s+q[1][1],0),SM=all.reduce((s,q)=>s+q[0][0]*q[1][1]-q[0][1]*q[1][0],0);
+  const cf=coefs(g.m),b=.08,e=.04,h=[g.h0+a1*sb,g.h0+a2*sb],feet=[];                           // b: separación de pernos, e: excentricidad
+  [0,1].forEach(i=>cf.forEach((c0,j)=>{const f=[R[i][0]*c0/g.m,R[i][1]*c0/g.m],M=Math.abs(f[0])*h[i]+Math.abs(f[1])*e,Fup=-f[1];
+    feet.push({i,j,x:.15+j*g.sp,f,mag:Math.hypot(f[0],f[1]),T:Math.max(Fup/2+M/b,0),V:Math.abs(f[0])/2,M,Fup})}));
+  return{Gd,Wd,Fw,N1,N2,H,R,SFx,SFy,SM,feet,pr,Fs};
+}
+
+/* 3) Capacidades teóricas por perno (kN) */
+function caps(d,mt,sub){
+  const f=MAT[mt],B=BOLT[d],hef=8*d+10;
+  return{f,B,hef,Ft:.9*f.fu*B.As/GM/1e3,Fv:.6*f.fu*B.As/GM/1e3,Fb:2.5*.8*270*d*5/GM/1e3,
+    NR:sub==="c"?7.7*Math.sqrt(21)*Math.pow(hef,1.5)/1.8/1e3:.6*Math.PI*1.6*d*3*360/GM/1e3};
+}
+function checks(c,T,V,sub){
+  const u=T/(1.4*c.Ft)+V/c.Fv,ds=T/1.5*1e3/c.B.As,r=(n,dm,cp)=>({n,d:nf(dm,2)+" kN",c:nf(cp,2)+" kN",fs:cp/Math.max(dm,1e-9),cap:cp});
+  return[r("Tracción del perno",T,c.Ft),r("Cortante del perno",V,c.Fv),
+    {n:"Interacción tracción–cortante",d:"T/(1,4·Ft)+V/Fv = "+nf(u,3),c:"≤ 1,00",fs:1/Math.max(u,1e-9),cap:T/Math.max(u,1e-9)},
+    r("Aplastamiento de la pata (Al, t = 5 mm)",V,c.Fb),
+    r(sub==="c"?"Arrancamiento (cono de concreto)":"Punzonamiento de la correa (t = 3 mm)",T,c.NR),
+    {n:"Fatiga (indicativa)",d:"Δσ ≈ "+nf(ds,1)+" MPa",c:"50 MPa (EN 1993-1-9)",fs:50/Math.max(ds,1e-9),cap:0}];
+}
+
+/* 4) Cálculo completo y actualización de la pestaña */
+function est(v){
+  const g=geom(v),sub=$("e_sub").value,mt=$("e_mat").value,sel=$("e_d").value,S=[solve(0,g),solve(1,g)];
+  const all=S.flatMap(s=>s.feet),Tm=Math.max(...all.map(f=>f.T))/1e3,Vm=Math.max(...all.map(f=>f.V))/1e3;
+  const ev=d=>{const c=caps(d,mt,sub),ch=checks(c,Tm,Vm,sub),gv=ch.slice(0,5).reduce((a,b)=>b.fs<a.fs?b:a);return{c,ch,gv,fs:gv.fs}};
+  const d=sel==="auto"?([10,12,16].find(x=>ev(x).fs>=1.5)||16):+sel,E=ev(d),c=E.c,B=c.B,f=c.f;
+  const Lmin=sub==="c"?c.hef+5+3+B.m+5:5+3+6+B.m+4,Lb=LENS.find(x=>x>=Lmin)||Math.ceil(Lmin/10)*10;
+  const Fp=.7*f.fy*B.As,Tq=f.K*d/1000*Fp,nbH=4*(g.m+1),nb=nbH*g.Hn;
+  const dem=S[1].feet.reduce((s,x)=>s+Math.max(x.Fup,0),0)/1e3,capH=nbH*E.gv.cap,fsT=E.fs;
+  const stat=fsT>=1.5?["CUMPLE","Cumple con margen (preliminar)"]:fsT>=1?["AJUSTADO","Cumple con poco margen: revisar"]:["NO CUMPLE","No cumple: aumenta diámetro o puntos de apoyo"];
+  const Mc=Math.max(...S.map(s=>Math.max(Math.abs(s.N1),Math.abs(s.N2))))/(g.nh*2)/1e3,cc=caps(8,"A2-70",sub);
+  E.ch.push({n:"Pinza panel–riel M8 A2-70 (4 por panel)",d:nf(Mc,2)+" kN",c:nf(cc.Ft,2)+" kN",fs:cc.Ft/Math.max(Mc,1e-9)});
+  ST={g,S,d,sub,mt,E,Tm,Vm,Lb,Tq,Fp,nbH,nb,dem,capH,stat};
+  const kp=(cl,ic,l,val,u)=>`<div class="kpi ${cl}"><div class="l"><svg class="ic" aria-hidden="true"><use href="#i-${ic}"/></svg>${l}</div><div class="v">${val}</div><div class="u">${u}</div></div>`;
+  const tot=g.Hn*(S[0].Gd+S[0].Wd)/1e3;
+  $("e_nhh").textContent=`${g.N} paneles → ${g.Hn} hilera(s). Se analiza una hilera completa.`;
+  $("estsub").textContent=`${g.N} paneles ${PAN[g.k].n} (${g.t.wp} W) · ${nf(g.bd,0)}° · ráfaga ${nf(g.vv,0)} m/s · presión dinámica q = ${nf(g.q,0)} Pa`;
+  $("estk").innerHTML=[
+    kp("blu","panel","Peso total de los paneles",nf(g.N*g.mp,0)+" kg",nf(g.N*g.mp*GR/1e3,2)+" kN ("+nf(g.mp,1)+" kg por panel)"),
+    kp("blu","wrench","Peso de la estructura",nf(g.Hn*g.Wst/GR,0)+" kg",nf(g.Hn*g.Wst/1e3,2)+" kN · rieles y patas de aluminio"),
+    kp("sun","down","Carga total calculada",nf(tot,2)+" kN","ELU con 1,35·G + 1,5·W (presión)"),
+    kp("sun","check","Número de pernos",nf(nb,0),`anclajes a la cubierta · más ${nf(4*g.N,0)} pernos M8 de pinza`),
+    kp("grn","bolt","Fuerza máx. por perno",nf(Tm,2)+" kN","tracción · cortante máx. "+nf(Vm,2)+" kN"),
+    kp("blu","wrench","Diámetro × longitud","M"+d+" × "+Lb,"mm · "+(sub==="c"?"espárrago con anclaje químico":"tornillo hexagonal pasante")),
+    kp("blu","shield","Material perno / tuerca",f.n.split(" ")[0]+" "+(mt==="8.8"?"8.8":"A2-70"),`tuerca hexagonal M${d} ${f.tu}, m = ${B.m} mm, s = ${B.s} mm`),
+    kp("sun","wrench","Torque de apriete",nf(Tq,0)+" N·m","teórico: T = K·d·Fp, Fp = "+nf(Fp/1e3,1)+" kN"),
+    kp("grn","shield","Capacidad resistente por perno",nf(E.gv.cap,1)+" kN","gobierna: "+E.gv.n.toLowerCase()),
+    kp("grn","pct","Factor de seguridad",nf(fsT,1),"capacidad de diseño / demanda de diseño"),
+    kp("blu","panel","Capacidad del conjunto",nf(capH,1)+" kN","por hilera ("+nbH+" pernos) vs "+nf(dem,2)+" kN de levantamiento"),
+    kp("grn","check","Estado de la estructura",stat[0],stat[1])].join("");
+  $("estm").innerHTML=`<div class="msg">${d===+sel||sel!=="auto"?"":"Diámetro automático: el más pequeño (desde M10) con factor de seguridad ≥ 1,5. "}Gobierna el modo «${E.gv.n.toLowerCase()}». La resistencia del perno suele sobrar; en la práctica limitan el anclaje y la pata.</div>`;
+  const s=S[+$("e_c").value],mx=Math.max(...s.feet.map(x=>x.mag));
+  $("estf").innerHTML=s.feet.map(x=>{const u=Math.max(x.T/1e3/c.Ft,x.V/1e3/c.Fv,x.V/1e3/c.Fb,x.T/1e3/c.NR),h=heat(x.mag/mx);
+    return`<tr><td>Riel ${x.i?"posterior":"frontal"} · pata ${x.j+1}${x.mag===mx?" (máx.)":""}</td><td>${nf(x.x,2)}</td><td>${nf(x.mag/1e3,2)}</td><td>${nf(x.T/1e3,2)}</td><td>${nf(x.V/1e3,2)}</td><td style="color:${rgb(h)}">${nf(u*100,1)} %</td></tr>`}).join("");
+  $("estc").innerHTML=E.ch.map(x=>`<tr><td>${x.n}</td><td>${x.d}</td><td>${x.c}</td><td style="${x.fs<1?"color:var(--bad)":""}">${nf(x.fs,1)}</td></tr>`).join("");
+  explain();draw3d();
+}
+
+/* 5) Explicación con fórmulas, unidades y procedimiento */
+function explain(){
+  const{g,S,d,sub,E,Tm,Vm,nbH,dem,capH,Tq,Fp}=ST,s=S[+$("e_c").value],c=E.c,fm=t=>`<div class="fm">${t}</div>`,F=(x,k=2)=>nf(x,k);
+  const fts=s.feet.map(x=>x.mag),r=Math.max(...fts)/Math.min(...fts.filter(x=>x>0));
+  $("este").innerHTML=`
+<details open><summary>1.ª ley de Newton: equilibrio estático (${s.pr?"peso + viento a presión":"succión"})</summary>
+<p>Si la hilera está en reposo, la fuerza neta y el momento neto sobre ella son cero: ΣFx = 0, ΣFy = 0, ΣM = 0. Se resuelve en el plano de la pendiente (s, n) y se verifica en ejes globales.</p>
+${fm(`Peso de diseño  Gd = γG·(m·g) = ${s.pr?"1,35":"0,90"} × ${F(g.G/GR,1)} kg × 9,81 m/s² = ${F(s.Gd,0)} N
+Viento de diseño  Wd = γQ·q·cp·A = 1,5 × ${F(g.q,0)} Pa × ${F(s.pr?g.pp/g.q:g.ps/g.q)} × ${F(g.A)} m² = ${F(s.Wd,0)} N  (normal al panel)`)}
+${fm(`ΣFs = 0 → H = Gd·sen β / 2 por riel = ${F(s.H,0)} N
+ΣM(riel 1) = 0 → N₂ = −Σ Fn·(s − a₁)/(a₂ − a₁) = ${F(s.N2,0)} N
+ΣFn = 0 → N₁ = −ΣFn − N₂ = ${F(s.N1,0)} N`)}
+${fm(`ΣFx = ${F(s.SFx,4)} N   ΣFy = ${F(s.SFy,4)} N   ΣM = ${F(s.SM,4)} N·m   (≈ 0: equilibrio)`)}
+<p>La estructura permanece estable porque los apoyos generan reacciones que anulan exactamente peso y viento. ${s.pr?"El peso y la presión del viento empujan la estructura contra los apoyos, que reaccionan hacia arriba.":"La succión intenta levantar la hilera; solo los pernos impiden que se mueva, así que trabajan a tracción."} El peso se reparte entre dos rieles según su distancia al centro de gravedad (a₁ = ${F(g.a1)} m, a₂ = ${F(g.a2)} m, medidas desde el borde inferior).</p></details>
+<details><summary>Cómo se reparte la fuerza entre los puntos de fijación</summary>
+<p>Cada riel es una viga continua sobre ${g.m+1} patas con separación ≈ ${F(g.sp)} m. Sus reacciones no son iguales: las patas extremas reciben ≈ 0,4·R/m y las interiores hasta 1,1·R/m. Además el riel posterior queda más alto y su pata tiene mayor brazo.</p>
+${fm(`Reacción por pata = coef × R_riel / m      coef = [${coefs(g.m).map(x=>F(x,3)).join(" ; ")}]
+Momento por pata M = V·h + F·e  (e = 0,04 m)   →   T = F/2 ± M/b   (b = 0,08 m entre pernos)
+Pata más cargada / menos cargada = ${F(r,1)} : 1`)}
+<p>Por eso la carga máxima por perno (${F(Tm)} kN a tracción, ${F(Vm)} kN a cortante) no es el promedio. Está en la pata de mayor reacción y mayor brazo de palanca.</p></details>
+<details><summary>Por qué esta cantidad de pernos y este diámetro</summary>
+<p><b>Cantidad:</b> se limita la separación entre patas a 1,6 m para que el riel no flexe en exceso. Resultan ${g.m+1} patas por riel, 2 rieles y 2 pernos por pata: ${nbH} pernos por hilera. Dos pernos por pata resisten el momento por excentricidad con un par de fuerzas y no con un solo perno cargado en flexión.</p>
+<p><b>Diámetro:</b> M${d} porque, con ${MAT[ST.mt].n.toLowerCase()}, cumple todos los modos con FS ≥ ${F(E.fs,1)}. Por práctica constructiva no se baja de M10 en el anclaje, aunque el acero resistiría menos. Capacidades por perno:</p>
+${fm(`Ft,Rd = 0,9·fub·As/γM2 = 0,9 × ${c.f.fu} MPa × ${c.B.As} mm² / 1,25 = ${F(c.Ft)} kN
+Fv,Rd = 0,6·fub·As/γM2 = ${F(c.Fv)} kN
+Fb,Rd = 2,5·0,8·fu·d·t/γM2 = ${F(c.Fb)} kN  (aluminio fu = 270 MPa, t = 5 mm)
+${sub==="c"?"NRd,c = 7,7·√fck·hef^1,5/1,8 = "+F(c.NR)+" kN  (hef = "+c.hef+" mm, fck = 21 MPa)":"Bp,Rd = 0,6·π·dm·tp·fu/γM2 = "+F(c.NR)+" kN  (dm ≈ 1,6·d, tp = 3 mm)"}`)}
+<p><b>Torque teórico:</b></p>${fm(`Fp = 0,7·fy·As = ${F(Fp/1e3,1)} kN      T = K·d·Fp = ${c.f.K} × ${d/1000} m × ${F(Fp,0)} N = ${F(Tq,0)} N·m`)}
+<p>El torque real no debe superar el que indique el fabricante de la pata (el aluminio se aplasta con valores altos) ni el de la ficha del anclaje.</p></details>
+<details><summary>Capacidad resistente del conjunto</summary>
+${fm(`Capacidad por hilera = ${nbH} pernos × ${F(E.gv.cap)} kN = ${F(capH,1)} kN
+Demanda de levantamiento (ΣT por hilera) = ${F(dem)} kN      Reserva = ${F(capH/Math.max(dem,1e-9),1)} veces`)}
+<p>El conjunto solo es tan fuerte como su eslabón más débil: ${E.gv.n.toLowerCase()}. Esto supone que los pernos se reparten la carga como indica el modelo, que el sustrato es sano y que el apriete es correcto.</p></details>
+<details><summary>Condiciones que pueden comprometer la estabilidad</summary>
+<p>Rachas mayores que las de diseño, zonas de borde y esquina de la cubierta (succión local 2 a 3 veces mayor), concreto fisurado o poco espesor, distancias a bordes menores a 1,5·hef, apriete insuficiente o excesivo, corrosión (usar A2-70 cerca del mar), arandelas o tuercas sin clase equivalente, correa delgada, fatiga por vibración del viento y sobrecargas no consideradas (nieve, mantenimiento, sismo).</p></details>
+<details><summary>Valores teóricos y valores verificados</summary>
+<p>Todo lo mostrado es teórico: usa fórmulas generales y supuestos propios, sin ensayos. Para un diseño real debes tomar del fabricante la capacidad de la pata, de la pinza y del anclaje (con su aprobación técnica), y de la norma local el viento y el sismo.</p></details>`;
+}
+
+/* 6) Visor 3D propio en canvas (sin librerías nuevas): proyección en perspectiva y orden por profundidad */
+function heat(u){u=clamp(u,0,1);const A=[16,185,129],B=[245,158,11],D=[248,113,113],[p,q,t]=u<.5?[A,B,u*2]:[B,D,(u-.5)*2];return p.map((x,i)=>x+(q[i]-x)*t)}
+const rgb=(c,k=1)=>`rgb(${c.map(x=>Math.round(clamp(x*k,0,255))).join(",")})`;
+function draw3d(){
+  const cv=$("c3d");if(!ST||!cv.clientWidth)return;
+  const dp=devicePixelRatio||1,W=cv.clientWidth,Hh=cv.clientHeight;cv.width=W*dp;cv.height=Hh*dp;
+  const x=cv.getContext("2d");x.setTransform(dp,0,0,dp,0,0);
+  const{g,S,d}=ST,s=S[+$("e_c").value],sb=Math.sin(g.beta),cb=Math.cos(g.beta),B=BOLT[d],ex=2,b=.08,P=[],mx=Math.max(...s.feet.map(f=>f.mag));
+  const ext=Math.max(g.L,g.l*cb)+1.4,D=ext*1.8/C3.zoom,Fc=D*Math.min(W,Hh*1.6)*.85/ext,T0=[g.L/2,(g.h0+g.l*sb)/2,g.l*cb/2];
+  const cy=Math.cos(C3.yaw),sy=Math.sin(C3.yaw),cp=Math.cos(C3.pit),sp=Math.sin(C3.pit);
+  const pj=p=>{const a=p[0]-T0[0],y=p[1]-T0[1],z=p[2]-T0[2],x1=a*cy+z*sy,z1=-a*sy+z*cy,y2=y*cp+z1*sp,z2=-y*sp+z1*cp,k=Fc/(z2+D);return[W/2+x1*k,Hh/2*1.05-y2*k,z2]};
+  const poly=(v,c)=>P.push({v,c}),Ld=[-.4,.8,.45];
+  const box=(a,b2,c0,d0,e0,f0,c)=>[[[a,b2,c0],[d0,b2,c0],[d0,e0,c0],[a,e0,c0]],[[a,b2,f0],[d0,b2,f0],[d0,e0,f0],[a,e0,f0]],[[a,b2,c0],[a,b2,f0],[a,e0,f0],[a,e0,c0]],[[d0,b2,c0],[d0,b2,f0],[d0,e0,f0],[d0,e0,c0]],[[a,e0,c0],[d0,e0,c0],[d0,e0,f0],[a,e0,f0]]].forEach(v=>poly(v,c));
+  const prism=(cx,cz,y0,y1,r,n,c)=>{const q=(k,y)=>[cx+r*Math.cos(k*2*Math.PI/n+.3),y,cz+r*Math.sin(k*2*Math.PI/n+.3)];for(let k=0;k<n;k++)poly([q(k,y0),q(k+1,y0),q(k+1,y1),q(k,y1)],c);poly(Array.from({length:n},(_,k)=>q(k,y1)),c)};
+  // paneles (marco + celdas) y pinzas
+  const pp=(xx,ss,o=.04)=>[xx,g.h0+o+ss*sb,ss*cb];
+  for(let i=0;i<g.nh;i++){const x0=i*(g.w+.02);
+    poly([pp(x0-.01,-.01),pp(x0+g.w+.01,-.01),pp(x0+g.w+.01,g.l+.01),pp(x0-.01,g.l+.01)],[170,182,196]);
+    for(let u=0;u<6;u++)for(let w=0;w<10;w++){const a=x0+.02+u*(g.w-.04)/6,b2=a+(g.w-.04)/6-.006,c0=.02+w*(g.l-.04)/10,d0=c0+(g.l-.04)/10-.006,k=(u+w)%2?[27,58,95]:[23,48,79];
+      poly([pp(a,c0,.042),pp(b2,c0,.042),pp(b2,d0,.042),pp(a,d0,.042)],k)}
+    [g.a1,g.a2].forEach(a=>[.12,g.w-.12].forEach(o=>{const q=pp(x0+o,a,.04);box(q[0]-.02,q[1]-.005,q[2]-.03,q[0]+.02,q[1]+.015,q[2]+.03,[200,210,225])}))}
+  // rieles, patas, pernos y tuercas
+  [g.a1,g.a2].forEach(a=>{const y=g.h0+a*sb,z=a*cb;box(0,y-.0,z-.02,g.L,y+.04,z+.02,[159,178,200])});
+  s.feet.forEach(f=>{const a=f.i?g.a2:g.a1,z=a*cb,y=g.h0+a*sb,col=heat(f.mag/mx);
+    box(f.x-.07,0,z-.07,f.x+.07,.01,z+.07,col);box(f.x-.02,.01,z-.02,f.x+.02,y,z+.02,[130,145,165]);
+    [-1,1].forEach(k=>{const zz=z+k*b/2,r=d/2000*ex;prism(f.x,zz,.01,.01+.035+d/500,r,10,[205,214,228]);
+      prism(f.x,zz,.011,.012+.0015*ex,r*1.9,12,[190,196,206]);prism(f.x,zz,.0125,.0125+B.m/1000*ex,B.s/2000*ex*1.15,6,col.map(v=>v*.9))})});
+  // suelo / cubierta
+  const rf=[[-.6,0,-.7],[g.L+.6,0,-.7],[g.L+.6,0,g.l*cb+.7],[-.6,0,g.l*cb+.7]];
+  x.fillStyle="#13233A";x.beginPath();rf.map(pj).forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));x.fill();
+  x.strokeStyle="rgba(96,140,220,.18)";x.lineWidth=1;
+  for(let i=0;i<=Math.ceil(g.L+1.2);i++){const a=pj([-.6+i,0,-.7]),c2=pj([-.6+i,0,g.l*cb+.7]);x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(c2[0],c2[1]);x.stroke()}
+  for(let i=0;i<=Math.ceil(g.l*cb+1.4);i++){const a=pj([-.6,0,-.7+i]),c2=pj([g.L+.6,0,-.7+i]);x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(c2[0],c2[1]);x.stroke()}
+  // polígonos ordenados de lejos a cerca, con sombreado por orientación
+  P.forEach(p=>{p.p=p.v.map(pj);p.z=p.p.reduce((s,q)=>s+q[2],0)/p.p.length;
+    const u=p.v[1].map((t,i)=>t-p.v[0][i]),w=p.v[2].map((t,i)=>t-p.v[0][i]),n=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]],l=Math.hypot(...n)||1;
+    p.k=.55+.45*Math.abs((n[0]*Ld[0]+n[1]*Ld[1]+n[2]*Ld[2])/l/Math.hypot(...Ld))});
+  P.sort((a,b2)=>b2.z-a.z).forEach(p=>{x.fillStyle=rgb(p.c,p.k);x.strokeStyle="rgba(0,0,0,.3)";x.lineWidth=.6;x.beginPath();p.p.forEach((q,i)=>i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1]));x.closePath();x.fill();x.stroke()});
+  // flechas de fuerza (3D → 2D): peso, viento, reacciones, T y V
+  const arrow=(t,h,col,lab,w=2.4)=>{const a=pj(t),c2=pj(h),an=Math.atan2(c2[1]-a[1],c2[0]-a[0]);x.strokeStyle=x.fillStyle=col;x.lineWidth=w;x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(c2[0],c2[1]);x.stroke();
+    x.beginPath();x.moveTo(c2[0],c2[1]);x.lineTo(c2[0]-10*Math.cos(an-.4),c2[1]-10*Math.sin(an-.4));x.lineTo(c2[0]-10*Math.cos(an+.4),c2[1]-10*Math.sin(an+.4));x.fill();
+    if(lab){x.font="600 11px Outfit,system-ui,sans-serif";x.fillStyle="#F8FAFC";x.fillText(lab,a[0]+5,a[1]-4)}};
+  const sc=1.3/Math.max(s.Gd,s.Wd),cG=pp(g.L/2,g.l/2,.06),cW=pp(g.L/2+.5,g.sw,.06),nv=[0,cb,-sb],lw=s.Wd*sc;
+  arrow(cG,[cG[0],cG[1]-s.Gd*sc,cG[2]],"#60A5FA","Peso "+nf(s.Gd/1e3,2)+" kN");
+  s.pr?arrow(cW.map((q,i)=>q+nv[i]*lw),cW,"#F8FAFC","Viento "+nf(s.Wd/1e3,2)+" kN"):arrow(cW,cW.map((q,i)=>q+nv[i]*lw),"#F8FAFC","Viento "+nf(s.Wd/1e3,2)+" kN");
+  s.feet.forEach(f=>{const a=f.i?g.a2:g.a1,p=[f.x,g.h0+a*sb+.02,a*cb],k=.8/mx,hd=heat(f.mag/mx);
+    arrow([p[0],p[1]-f.f[1]*k,p[2]-f.f[0]*k],p,rgb(hd),s.feet.length<=12||f.mag===mx?nf(f.mag/1e3,2)+(f.mag===mx?" kN MÁX":""):"",2.2)});
+  const m0=s.feet.reduce((a,f)=>f.T>a.T?f:a,s.feet[0]),pm=[m0.x,.12+d/500,(m0.i?g.a2:g.a1)*cb];
+  if(m0.T>0){arrow(pm,[pm[0],pm[1]+.3,pm[2]],"#60A5FA","T",1.8);arrow(pm,[pm[0],pm[1],pm[2]+.3],"#CBD5E1","V",1.8)}
+}
+(()=>{const cv=$("c3d"),ps=new Map();let pd=0;const pi=()=>{const a=[...ps.values()];return Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])};
+  cv.onpointerdown=e=>{cv.setPointerCapture(e.pointerId);ps.set(e.pointerId,[e.clientX,e.clientY]);pd=ps.size>1?pi():0};
+  cv.onpointermove=e=>{if(!ps.has(e.pointerId))return;const o=ps.get(e.pointerId);ps.set(e.pointerId,[e.clientX,e.clientY]);
+    if(ps.size>1){const p=pi();if(pd)C3.zoom=clamp(C3.zoom*p/pd,.4,6);pd=p}else{C3.yaw+=(e.clientX-o[0])*.008;C3.pit=clamp(C3.pit+(e.clientY-o[1])*.006,-.1,1.5)}draw3d()};
+  cv.onpointerup=cv.onpointercancel=e=>{ps.delete(e.pointerId);pd=0};
+  cv.addEventListener("wheel",e=>{e.preventDefault();C3.zoom=clamp(C3.zoom*(e.deltaY<0?1.12:.89),.4,6);draw3d()},{passive:false});
+  new ResizeObserver(()=>draw3d()).observe(cv);
+  $("v3r").onclick=()=>{Object.assign(C3,{yaw:-.7,pit:.42,zoom:1});draw3d()}})();
+
+/* Enganche con el simulador existente: recalcula al ejecutar render() y redibuja al abrir la pestaña */
+const _render=render;render=function(v,r){_render(v,r);try{est(v)}catch(e){console.error(e)}};
+const _tab=tab;tab=function(t){_tab(t);if(t==="est")setTimeout(draw3d,0)};
 load(EJEMPLOS[1]);
 </script>
 </body>
